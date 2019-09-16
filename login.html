@@ -21,6 +21,16 @@
 			margin-top: 0px;
 			margin-right: 55px;
 		}
+		#wrongEmailAlert {
+			border: 1px solid #d6e9c6;
+			border-radius: 5px;
+			margin: 2px 40px;
+			margin-bottom: 10px;
+			text-align: center;
+			color: #3c763d;
+			background-color: #dff0d8;
+			display: none;
+		}
 	</style>
 </head>
 
@@ -31,8 +41,9 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.html" style="letter-spacing:3px;"><i class="fas fa-user-secret"
 					style="margin-right:6px;"></i>E-Veil</a>
-			<button class="navbar-toggler custom-button-for-responsive" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler custom-button-for-responsive" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
@@ -61,15 +72,18 @@
 	<div class="wrapper" style="background-image: url('./img/signin-bg-3.jpg');">
 		<div class="inner" style="border-radius: 10px;">
 
-			<form action="./user_page/profile.html" method="POST">
+			<form id="login_form_id">
 				<h3>Login Form</h3>
 				<div class="form-wrapper">
-					<input type="email" placeholder="Email" class="form-control" name="email" required>
+					<input type="email" placeholder="Email" class="form-control" id="email_id" required>
 					<i class="zmdi zmdi-email"></i>
 				</div>
 				<div class="form-wrapper">
-					<input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
+					<input type="password" placeholder="Password" class="form-control" id="password_id" required>
 					<i class="zmdi zmdi-lock"></i>
+				</div>
+				<div class="form-wrapper" id="wrongEmailAlert">
+					Wrong Email or Password!
 				</div>
 				<div class="form-wrapper">
 					<a href="forgetpw.html" style="text-decoration: none;color: #111;">forget password?</a>
@@ -95,6 +109,10 @@
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	<script src="db_js/login.js"></script>
 </body>
 
 </html>
