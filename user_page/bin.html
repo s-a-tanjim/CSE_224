@@ -9,14 +9,11 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>E-Veil</title>
-  <link rel="icon" href="./img/icons/inbox.png" type="image/icon type">
+  <title>Deleted emails</title>
+  <link rel="icon" href="./img/icons/trash.png" type="image/icon type">
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- For Modal -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
@@ -25,7 +22,6 @@
   <link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
-
 
 <body id="page-top">
 
@@ -114,13 +110,12 @@
     </ul>
 
     <!--Dashboard end-->
-
     <div id="content-wrapper">
       <div class="container-fluid">
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Inbox</div>
+            Deleted Emails</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -141,11 +136,12 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr style="background-color:rgba(0,0,0,0.2);">
-                    <td>From</td>
-                    <td><a style="color:black;cursor:default;" href="#">message</a></td>
-                    <td>Data</td>
-                    <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
+                  <tr>
+                    <td>from</td>
+                    <td>message</td>
+                    <td>date</td>
+                    <td style="display: flex;justify-content:space-around;"><a href="#"><i class="fas fa-undo"></i></a>
+                      <a href="#"><i class="far fa-trash-alt"></i></a></td>
                   </tr>
                 </tbody>
               </table>
@@ -155,7 +151,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -181,25 +176,26 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
 
-    <script src="./userdb_js/logout.js"></script>
+  <script src="./userdb_js/logout.js"></script>
 
 </body>
 

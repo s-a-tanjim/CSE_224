@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>E-Veil</title>
+  <title>Message</title>
   <link rel="icon" href="./img/icons/inbox.png" type="image/icon type">
 
   <!-- Custom fonts for this template-->
@@ -24,8 +24,28 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
-</head>
+  <style>
+    .main {
+      margin: 5% 4%;
+      width: 100%;
+    }
 
+    .from {
+      width: 100%;
+      padding: 5px 10px;
+      border: 1px solid black;
+      font-size: 20px;
+    }
+
+    .message {
+      width: 100%;
+      padding: 5px 10px;
+      border: 1px solid black;
+      margin-top: 25px;
+    }
+  </style>
+
+</head>
 
 <body id="page-top">
 
@@ -115,45 +135,16 @@
 
     <!--Dashboard end-->
 
-    <div id="content-wrapper">
-      <div class="container-fluid">
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Inbox</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>From</th>
-                    <th>Email</th>
-                    <th>Received date</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>From</th>
-                    <th>Email</th>
-                    <th>Received date</th>
-                    <th>Action</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr style="background-color:rgba(0,0,0,0.2);">
-                    <td>From</td>
-                    <td><a style="color:black;cursor:default;" href="#">message</a></td>
-                    <td>Data</td>
-                    <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated today at ---</div>
-        </div>
+    <div class="main">
+      <div class="from">
+        To:
+        <img src="#" width="20px" height="20px" style="border-radius:50%;"> from
       </div>
+      <div class="message">
+        <p style="font-size:20px;">Message:</p>
+        <p>message</p>
+      </div>
+
     </div>
 
 
@@ -181,25 +172,26 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
 
-    <script src="./userdb_js/logout.js"></script>
+  <script src="./userdb_js/logout.js"></script>
 
 </body>
 
