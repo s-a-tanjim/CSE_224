@@ -139,7 +139,7 @@
           </div>
           <div class="col-md-4" style="margin-left:4%;">
             <div class="profile-img">
-              <img src="./img/user.png" alt="pro_pic">
+              <img src="./img/user.png" alt="pro_pic" id="disp_pro_pic">
             </div>
           </div>
         </div>
@@ -354,7 +354,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Upload Profile Picture</label><br>
-                          <input class="form-group" type="file" id="pro_pic_id" accept="image/*">
+                          <input class="form-group" type="file" id="pro_pic_id" accept="image/*" onchange=" previewFile()">
                         </div>
                       </div>
                     </div>
