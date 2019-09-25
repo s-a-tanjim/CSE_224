@@ -72,7 +72,7 @@
 	<div class="wrapper" style="background-image: url('./img/signin-bg-3.jpg');">
 		<div class="inner" style="border-radius: 10px;">
 
-			<form id="login_form_id">
+			<form id="login_form_id" action="#">
 				<h3>Login Form</h3>
 				<div class="form-wrapper">
 					<input type="email" placeholder="Email" class="form-control" id="email_id" required>
@@ -90,7 +90,7 @@
 					<div style="float: right;"><a href="signup.html" style="text-decoration: none;color: #111;">Create new
 							account</a></div>
 				</div>
-				<button type="submit" name="login_submit">Login
+				<button type="submit" name="login_submit" id="login_button">Login
 					<i class="zmdi zmdi-arrow-right"></i>
 				</button>
 			</form>
@@ -112,7 +112,8 @@
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-	<script src="db_js/login.js"></script>
+  <!--<script src="db_js/login.js"></script>-->
+  <script src="db_js/login.js"></script>
 </body>
 
 </html>
