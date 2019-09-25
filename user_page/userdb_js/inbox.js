@@ -1,16 +1,3 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyCn_joi3Mjky9IbXBhxl4J8Ngc9G0HBm2o",
-  authDomain: "e-veil.firebaseapp.com",
-  databaseURL: "https://e-veil.firebaseio.com",
-  projectId: "e-veil",
-  storageBucket: "",
-  messagingSenderId: "1002308855640",
-  appId: "1:1002308855640:web:1e5d0e74edef54f8c9a72d"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
 var ref = "user/" + uid;
@@ -28,10 +15,20 @@ function retrieveData(data) {
   const first_name = alldata[k].first_name;
   const last_name = alldata[k].last_name;
   const phone_number = alldata[k].phone_number;
+  const city = alldata[k].city;
+  const country = alldata[k].country;
+  const postal_code = alldata[k].postal_code;
+  const received_email = alldata[k].received_email;
+  const sent_email = alldata[k].sent_email;
 
   sessionStorage.setItem('first_name', first_name);
   sessionStorage.setItem('last_name', last_name);
   sessionStorage.setItem('phone_number', phone_number);
+  sessionStorage.setItem('city',city);
+  sessionStorage.setItem('country',country);
+  sessionStorage.setItem('postal_code',postal_code);
+  sessionStorage.setItem('received_email',received_email);
+  sessionStorage.setItem('sent_email',sent_email);
 
 }
 

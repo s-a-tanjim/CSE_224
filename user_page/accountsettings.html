@@ -29,7 +29,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="./userdb_js/session_check.js"></script>
-  <script src="./userdb_js/logout.js"></script>
+  <script src="./userdb_js/config.js"></script>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -123,7 +123,7 @@
           <div class="col-md-10">
 
             <div class="col-md-2" style="margin:4% auto;max-width: 320px">
-              <div class="card card-profile" style="">
+              <div class="card card-profile">
                 <div class="card-avatar" style="height: 100%;margin: auto;">
                   <img class="img" src="./img/user.png" alt="pro_pic" height="100%" width="250px">
                 </div>
@@ -136,13 +136,13 @@
               </div>
               <div class="card-body">
 
-                <form action="./user_db/db_accountsettings.php" method="POST" enctype="multipart/form-data">
+                <form action="#" method="POST">
 
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Email address</label>
-                        <input type="email" class="form-control" placeholder="email" disabled>
+                        <input type="email" id="user_email" class="form-control" placeholder="email" disabled>
                       </div>
                     </div>
                   </div>
@@ -151,13 +151,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">First Name</label>
-                        <input type="text" placeholder="first_name" name="first_name" class="form-control">
+                        <input type="text" id="user_first_name" placeholder="first_name" name="first_name" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">Last Name</label>
-                        <input type="text" placeholder="last_name" name="last_name" class="form-control">
+                        <input type="text" id="user_last_name" placeholder="last_name" name="last_name" class="form-control">
                       </div>
                     </div>
                   </div>
@@ -165,7 +165,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Mobile Number</label>
-                        <input type="text" placeholder="p_number" name="p_number" class="form-control">
+                        <input type="text" id="user_p_number" placeholder="p_number" name="p_number" class="form-control">
                       </div>
                     </div>
                   </div>
@@ -173,19 +173,19 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">City</label>
-                        <input type="text" placeholder="n/a" name="city" class="form-control">
+                        <input type="text" id="user_city" placeholder="n/a" name="city" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">Country</label>
-                        <input type="text" placeholder="n/a" name="country" class="form-control">
+                        <input type="text" id="user_country" placeholder="n/a" name="country" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">Postal Code</label>
-                        <input type="text" placeholder="n/a" name="postal_code" class="form-control">
+                        <input type="text" id="user_postal_code" placeholder="n/a" name="postal_code" class="form-control">
                       </div>
                     </div>
                   </div>
@@ -207,11 +207,11 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Upload Profile Picture</label><br>
-                        <input class="form-group" type="file" name="pro_pic" accept="image/*">
+                        <input class="form-group" id="user_pro_pic" type="file" name="pro_pic" accept="image/*">
                       </div>
                     </div>
                   </div>
-                  <button name="update_submit" type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                  <button name="update_submit" id="form_submit_button" type="submit" class="btn btn-primary pull-right">Update Profile</button>
                   <div class="clearfix"></div>
                 </form>
                 <script>
@@ -279,7 +279,9 @@
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
 
+  <!-- DB -->
   <script src="./userdb_js/logout.js"></script>
+  <script src="./userdb_js/accountsettings.js"></script>
 
 </body>
 
