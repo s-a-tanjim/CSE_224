@@ -21,6 +21,21 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
 
+  <style>
+    #emptyPassword,
+    #shortPassword,
+    #passwordNotMatch {
+      border: 1px solid #d6e9c6;
+      border-radius: 5px;
+      margin: 2px 40px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #3c763d;
+      background-color: #dff0d8;
+      display: none;
+    }
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -117,7 +132,7 @@
 
     <!--Dashboard end-->
 
-    <div class="content" style="margin-left:1%;">
+    <div class="content" style="margin-left:1%;margin-bottom: 3%;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-10">
@@ -151,13 +166,15 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">First Name</label>
-                        <input type="text" id="user_first_name" placeholder="first_name" name="first_name" class="form-control">
+                        <input type="text" id="user_first_name" placeholder="first_name" name="first_name"
+                          class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">Last Name</label>
-                        <input type="text" id="user_last_name" placeholder="last_name" name="last_name" class="form-control">
+                        <input type="text" id="user_last_name" placeholder="last_name" name="last_name"
+                          class="form-control">
                       </div>
                     </div>
                   </div>
@@ -165,7 +182,8 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Mobile Number</label>
-                        <input type="text" id="user_p_number" placeholder="p_number" name="p_number" class="form-control">
+                        <input type="text" id="user_p_number" placeholder="p_number" name="p_number"
+                          class="form-control">
                       </div>
                     </div>
                   </div>
@@ -185,7 +203,8 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">Postal Code</label>
-                        <input type="text" id="user_postal_code" placeholder="n/a" name="postal_code" class="form-control">
+                        <input type="text" id="user_postal_code" placeholder="n/a" name="postal_code"
+                          class="form-control">
                       </div>
                     </div>
                   </div>
@@ -203,18 +222,28 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="form-wrapper" id="passwordNotMatch">
+                    Password didn't match!
+                  </div>
+                  <div class="form-wrapper" id="shortPassword">
+                    Password is too short! (Password should minimum 6 character!)
+                  </div>
+                  <div class="form-wrapper" id="emptyPassword">
+                    Password field is empty!
+                  </div>
+                  <!--<div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Upload Profile Picture</label><br>
                         <input class="form-group" id="user_pro_pic" type="file" name="pro_pic" accept="image/*">
                       </div>
                     </div>
-                  </div>
-                  <button name="update_submit" id="form_submit_button" type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                  </div>-->
+                  <button name="update_submit" id="form_submit_button" type="submit"
+                    class="btn btn-primary pull-right">Update Profile</button>
                   <div class="clearfix"></div>
                 </form>
-                <script>
+                <!--<script>
                   var password = document.getElementById("password"),
                     confirm_password = document.getElementById("confirm_password");
 
@@ -227,7 +256,7 @@
                   }
                   password.onchange = validatePassword;
                   confirm_password.onkeyup = validatePassword;
-                </script>
+                </script>-->
               </div>
             </div>
           </div>
@@ -282,7 +311,8 @@
   <!-- DB -->
   <script src="./userdb_js/logout.js"></script>
   <script src="./userdb_js/accountsettings.js"></script>
-
+  <!--<script src="./userdb_js/pic_upload.js"></script>-->
+  
 </body>
 
 </html>
