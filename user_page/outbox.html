@@ -143,18 +143,12 @@
                     <th>Action</th>
                   </tr>
                 </tfoot>
-                <tbody>
-                  <tr>
-                    <td>from</td>
-                    <td><a style="color:black;cursor:default;" href="#">message</td>
-                    <td>date</td>
-                    <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
-                  </tr>
+                <tbody id="sentTable">
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated today at ---</div>
+          <div id="present_time" class="card-footer small text-muted">Updated today at ---</div>
         </div>
       </div>
     </div>
@@ -203,7 +197,8 @@
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
 
-  <script src="./userdb_js/logout.js"></script>
+  <!--DB-->
+  <script src="./userdb_js/sent.js"></script>
 
 </body>
 

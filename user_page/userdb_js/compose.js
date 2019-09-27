@@ -47,7 +47,7 @@ form_send_button.addEventListener('click', e => {
       //Receiver db update
       var newEmailRef = to_userRef.push();
       newEmailRef.set({
-        'from': to_email,
+        'from': email,
         'subject': subject,
         'message': message,
         'bin': "0",
