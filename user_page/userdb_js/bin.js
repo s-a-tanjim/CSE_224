@@ -5,11 +5,11 @@ function createTable() {
   var uid = email.substring(0, email.length - 10);
   var ref = "emails/" + uid;
   var emailsRef = firebase.database().ref(ref);
- 
+  var totalmsg = 0;
+
   emailsRef.on('value', data => {
     var alldata = data.val();
     var keys = Object.keys(alldata);
-    var totalmsg = 0;
 
     for (var i = 0; i < keys.length; i++) {
       var index = keys[i];
@@ -24,21 +24,20 @@ function createTable() {
         cell1.innerHTML = alldata[index].from;
         cell2.innerHTML = '<a href="message.html?key=' + index + '">' + alldata[index].subject + '</a>';
         cell3.innerHTML = alldata[index].date;
-        cell4.innerHTML = '<a onClick="undoDelete(\'' + index+'\')">'+ 
-        '<i class="fas fa-undo"></i></a><a onClick="deleteEmail(\''+index+'\')">'
-        +'<i class="far fa-trash-alt"></i></a>';
+        cell4.innerHTML = '<a onClick="undoDelete(\'' + index + '\')">' +
+          '<i class="fas fa-undo"></i></a><a onClick="deleteEmail(\'' + index + '\')">' +
+          '<i class="far fa-trash-alt"></i></a>';
         totalmsg++;
         cell4.style.display = 'flex';
         cell4.style.justifyContent = 'space-around';
       }
     }
-
     document.getElementById('dataTable_info').innerHTML = "Showing " + totalmsg + " emails";
-
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.getElementById('present_time').innerHTML = "Updated today at " + time;
   }, errEmailsData);
+
+  var today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  document.getElementById('present_time').innerHTML = "Updated today at " + time;
 }
 
 function errEmailsData(err) {
@@ -46,7 +45,7 @@ function errEmailsData(err) {
   console.log(err);
 }
 
-function undoDelete(key){
+function undoDelete(key) {
   var email = sessionStorage.getItem('email');
   var uid = email.substring(0, email.length - 10);
   var ref = "emails/" + uid + "/" + key;
@@ -58,7 +57,7 @@ function undoDelete(key){
   });
 }
 
-function deleteEmail(key){
+function deleteEmail(key) {
   var email = sessionStorage.getItem('email');
   var uid = email.substring(0, email.length - 10);
   var ref = "emails/" + uid + "/" + key;

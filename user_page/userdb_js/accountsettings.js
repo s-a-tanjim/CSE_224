@@ -23,21 +23,6 @@ var uid = email.substring(0, email.length - 10);
 var ref = "user/" + uid;
 var userRef = firebase.database().ref(ref);
 
-userRef.on('value', retrieveData, errData);
-var index;
-
-function retrieveData(data) {
-  var alldata = data.val();
-  var keys = Object.keys(alldata);
-  index = keys[0];
-}
-
-function errData(err) {
-  console.log("Error!! id: ");
-  console.log(err);
-}
-
-
 form_submit_button.addEventListener('click', e => {
   e.preventDefault();
   var first_name = user_first_name.value;
@@ -60,42 +45,42 @@ form_submit_button.addEventListener('click', e => {
     } else {
       document.getElementById('passwordNotMatch').style.display = 'none';
       document.getElementById('shortPassword').style.display = 'none';
-      userRef.child(index).update({
+      userRef.update({
         'password': password
       });
 
       if (first_name.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'first_name': first_name
         });
         sessionStorage.setItem('first_name', first_name);
       }
       if (last_name.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'last_name': last_name
         });
         sessionStorage.setItem('last_name', last_name);
       }
       if (phone_number.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'phone_number': phone_number
         });
         sessionStorage.setItem('phone_number', phone_number);
       }
       if (city.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'city': city
         });
         sessionStorage.setItem('city', city);
       }
       if (country.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'country': country
         });
         sessionStorage.setItem('country', country);
       }
       if (postal_code.length !== 0) {
-        userRef.child(index).update({
+        userRef.update({
           'postal_code': postal_code
         });
         sessionStorage.setItem('postal_code', postal_code);

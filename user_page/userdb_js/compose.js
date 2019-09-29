@@ -56,6 +56,15 @@ form_send_button.addEventListener('click', e => {
         'date': date
       });
 
+      //increase send count of sender
+      var send_count = parseInt(sessionStorage.getItem('sent_email')) + 1;
+      sessionStorage.setItem('sent_email', send_count);
+      var ref = "user/" + uid;
+      var from_userRef_count = firebase.database().ref(ref);
+      from_userRef_count.update({
+        'sent_email': send_count
+      });
+
       document.getElementById("user_form_id").reset();
       document.getElementById('successMessage').style.display = 'block';
 
@@ -75,7 +84,7 @@ form_anonymous_send_button.addEventListener('click', e => {
   var subject = form_subject.value;
   var message = form_message.value;
 
-  
+
   var to_uid = to_email.substring(0, to_email.length - 10);
   ref = "emails/" + to_uid;
   var to_userRef = firebase.database().ref(ref);
@@ -111,6 +120,15 @@ form_anonymous_send_button.addEventListener('click', e => {
         'mode': "veilbox",
         'time': time,
         'date': date
+      });
+
+      //increase send count of sender
+      var send_count = parseInt(sessionStorage.getItem('sent_email')) + 1;
+      sessionStorage.setItem('sent_email', send_count);
+      var ref = "user/" + uid;
+      var from_userRef_count = firebase.database().ref(ref);
+      from_userRef_count.update({
+        'sent_email': send_count
       });
 
       document.getElementById("user_form_id").reset();

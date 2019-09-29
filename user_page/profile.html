@@ -2,255 +2,255 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Profile</title>
-    <link rel="icon" href="./img/icons/avatar.png" type="image/icon type">
+  <title>Profile</title>
+  <link rel="icon" href="./img/icons/avatar.png" type="image/icon type">
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <style>
-        .emp-profile {
-            padding: 3%;
-            margin-top: 3%;
-            margin-bottom: 3%;
-            border-radius: 0.5rem;
-            background: #fff;
-        }
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <style>
+    .emp-profile {
+      padding: 3%;
+      margin-top: 3%;
+      margin-bottom: 3%;
+      border-radius: 0.5rem;
+      background: #fff;
+    }
 
-        .profile-img {
-            text-align: center;
-        }
+    .profile-img {
+      text-align: center;
+    }
 
-        .profile-img img {
-            width: 70%;
-            height: 100%;
-        }
+    .profile-img img {
+      width: 70%;
+      height: 100%;
+    }
 
-        .profile-img .file {
-            position: relative;
-            overflow: hidden;
-            margin-top: -20%;
-            width: 70%;
-            border: none;
-            border-radius: 0;
-            font-size: 15px;
-            background: #212529b8;
-        }
+    .profile-img .file {
+      position: relative;
+      overflow: hidden;
+      margin-top: -20%;
+      width: 70%;
+      border: none;
+      border-radius: 0;
+      font-size: 15px;
+      background: #212529b8;
+    }
 
-        .profile-img .file input {
-            position: absolute;
-            opacity: 0;
-            right: 0;
-            top: 0;
-        }
+    .profile-img .file input {
+      position: absolute;
+      opacity: 0;
+      right: 0;
+      top: 0;
+    }
 
-        .profile-head h5 {
-            color: #333;
-        }
+    .profile-head h5 {
+      color: #333;
+    }
 
-        .profile-head h6 {
-            color: #0062cc;
-        }
+    .profile-head h6 {
+      color: #0062cc;
+    }
 
-        .profile-edit-btn {
-            border: none;
-            border-radius: 1.5rem;
-            width: 70%;
-            padding: 2%;
-            font-weight: 600;
-            color: #6c757d;
-            cursor: pointer;
-        }
+    .profile-edit-btn {
+      border: none;
+      border-radius: 1.5rem;
+      width: 70%;
+      padding: 2%;
+      font-weight: 600;
+      color: #6c757d;
+      cursor: pointer;
+    }
 
-        .proile-rating {
-            font-size: 12px;
-            color: #818182;
-            margin-top: 5%;
-        }
+    .proile-rating {
+      font-size: 12px;
+      color: #818182;
+      margin-top: 5%;
+    }
 
-        .proile-rating span {
-            color: #495057;
-            font-size: 15px;
-            font-weight: 600;
-        }
+    .proile-rating span {
+      color: #495057;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-        .profile-head .nav-tabs {
-            margin-bottom: 5%;
-        }
+    .profile-head .nav-tabs {
+      margin-bottom: 5%;
+    }
 
-        .profile-head .nav-tabs .nav-link {
-            font-weight: 600;
-            border: none;
-        }
+    .profile-head .nav-tabs .nav-link {
+      font-weight: 600;
+      border: none;
+    }
 
-        .profile-head .nav-tabs .nav-link.active {
-            border: none;
-            border-bottom: 2px solid #0062cc;
-        }
+    .profile-head .nav-tabs .nav-link.active {
+      border: none;
+      border-bottom: 2px solid #0062cc;
+    }
 
-        .profile-work {
-            padding: 14%;
-            margin-top: -15%;
-        }
+    .profile-work {
+      padding: 14%;
+      margin-top: -15%;
+    }
 
-        .profile-work p {
-            font-size: 12px;
-            color: #818182;
-            font-weight: 600;
-            margin-top: 10%;
-        }
+    .profile-work p {
+      font-size: 12px;
+      color: #818182;
+      font-weight: 600;
+      margin-top: 10%;
+    }
 
-        .profile-work a {
-            text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            font-size: 14px;
-        }
+    .profile-work a {
+      text-decoration: none;
+      color: #495057;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
-        .profile-work ul {
-            list-style: none;
-        }
+    .profile-work ul {
+      list-style: none;
+    }
 
-        .profile-tab label {
-            font-weight: 600;
-        }
+    .profile-tab label {
+      font-weight: 600;
+    }
 
-        .profile-tab p {
-            font-weight: 600;
-            color: #0062cc;
-        }
+    .profile-tab p {
+      font-weight: 600;
+      color: #0062cc;
+    }
 
-        .deletebutton {
-            background-color: white;
-            color: black;
-            border-radius: 5px;
-            border: 2px solid #555555;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-        }
+    .deletebutton {
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+      border: 2px solid #555555;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
 
-        .deletebutton:hover {
-            background-color: #555555;
-            color: white;
-        }
+    .deletebutton:hover {
+      background-color: #555555;
+      color: white;
+    }
 
-        .deletebutton_a {
-            color: white;
-            border: 2px solid #555555;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-        }
+    .deletebutton_a {
+      color: white;
+      border: 2px solid #555555;
+      -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
 
-        .deletebutton_a:hover {
-            color: red;
-        }
+    .deletebutton_a:hover {
+      color: red;
+    }
 
-        /* customModal edit.........................*/
-        .customModal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
+    /* customModal edit.........................*/
+    .customModal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
 
-        /* customModal Content */
-        .customModal-content {
-            position: relative;
-            background-color: #fefefe;
-            margin: auto;
-            padding: 0;
-            border: 1px solid #888;
-            width: 80%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s
-        }
+    /* customModal Content */
+    .customModal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
 
-        /* Add Animation */
-        @-webkit-keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
 
-            to {
-                top: 0;
-                opacity: 1
-            }
-        }
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
 
-        @keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0
+      }
 
-            to {
-                top: 0;
-                opacity: 1
-            }
-        }
+      to {
+        top: 0;
+        opacity: 1
+      }
+    }
 
-        /* The Close Button */
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    /* The Close Button */
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
 
-        .customModal-header {
-            padding: 2px 16px;
-            background-color: #555;
-            color: white;
-        }
+    .customModal-header {
+      padding: 2px 16px;
+      background-color: #555;
+      color: white;
+    }
 
-        .customModal-body {
-            padding: 2px 16px;
-        }
+    .customModal-body {
+      padding: 2px 16px;
+    }
 
-        .customModal-footer {
-            padding: 2px 16px;
-            background-color: #555;
-            color: white;
-        }
-    </style>
+    .customModal-footer {
+      padding: 2px 16px;
+      background-color: #555;
+      color: white;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -261,287 +261,287 @@
   <script src="./userdb_js/session_check.js"></script>
   <script src="./userdb_js/config.js"></script>
   <script src="./userdb_js/logout.js"></script>
-  
-
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-        <a class="navbar-brand mr-1" href="../index.html" style="letter-spacing:2px;"><i class="fas fa-user-secret"
-                style="margin-right:6px;"></i>E-Veil</a>
-
-        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Navbar Search -->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
-                    aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <!-- Navbar -->
-        <ul class="navbar-nav ml-auto ml-md-0">
-
-            <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-circle fa-fw"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="./profile.html">Profile</a>
-                    <a class="dropdown-item" href="./accountsettings.html">Settings</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                </div>
-            </li>
-        </ul>
-
-    </nav>
-
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <ul class="sidebar navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="compose.html">
-                    <i class="fas fa-pencil-alt"></i>
-                    <span>Compose</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="inbox.html">
-                    <i class="fas fa-envelope"></i>
-                    <span>Inbox</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="outbox.html">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>Sent</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="veilbox.html">
-                    <i class="fas fa-mask"></i>
-                    <span>Veilbox</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="bin.html">
-                    <i class="fas fa-trash-alt"></i>
-                    <span>Bin</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="far fa-address-card"></i>
-                    <span>Account</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="./profile.html">Profile</a>
-                    <a class="dropdown-item" href="./accountsettings.html">Account Settings</a>
-                    <a class="dropdown-item" href="../forgetpw.html">Forgot Password</a>
-                </div>
-            </li>
-        </ul>
-
-        <!--Dashboard end-->
 
 
-        <div class="container emp-profile">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="profile-head">
-                        <h5>
-                            User Name
-                        </h5>
-                        <h6 id="user_email">
-                           <!--email-->
-                        </h6>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                    aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                    aria-controls="profile" aria-selected="false">Timeline</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4" style="margin-left:4%;">
-                    <div class="profile-img">
-                        <img src="img/user.png" alt="pro_pic">
-                    </div>
-                </div>
-            </div>
+    <a class="navbar-brand mr-1" href="../index.html" style="letter-spacing:2px;"><i class="fas fa-user-secret"
+        style="margin-right:6px;"></i>E-Veil</a>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="tab-content profile-tab" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Name</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="user_name"><!--first_name last_name--></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Email</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="user_email_2"><!--email--></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Phone</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="user_p_number"><!--p_number--></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Address</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="user_address"><!--country--></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Joind</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="creation_date">creation_date</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Sent email</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="sent_mail_count"><!--sent_mail_count--></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Received mail</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p id="received_mail_count"><!--received_mail_count--></p>
-                                </div>
-                            </div>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button id="deleteAccount" class="deletebutton"><i style="margin-right:2px;"
-                                            class="far fa-trash-alt"></i>Delete Account</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
+          aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
+      </div>
+    </form>
 
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
 
-        <div id="deletecustomModal" class="customModal">
-            <div class="customModal-content">
-                <div class="customModal-header">
-                    <h2>Delete E-Veil Account</h2>
-                    <span class="close">&times;</span>
-                </div>
-                <div class="customModal-body">
-                    <p>Are you sure you want to delete your account?</p>
-                    <p><i class="fas fa-exclamation-triangle"></i> All of your data will be deleted permanently! </p>
-                </div>
-                <div class="customModal-footer">
-                    <a class="deletebutton_a" style="text-decoration:none;" href="#">YES</a>
-                    <a class="Noclose deletebutton_a" style="text-decoration:none;" href="#">NO</a>
-                </div>
-            </div>
-        </div>
-        <script>
-            var customModal = document.getElementById("deletecustomModal");
-            var btn = document.getElementById("deleteAccount");
-            var span = document.getElementsByClassName("close")[0];
-            var no_close = document.getElementsByClassName("Noclose")[0];
-
-            btn.onclick = function () {
-                customModal.style.display = "block";
-            }
-
-            span.onclick = function () {
-                customModal.style.display = "none";
-            }
-            no_close.onclick = function () {
-                customModal.style.display = "none";
-            }
-
-            window.onclick = function (event) {
-                if (event.target == customModal) {
-                    customModal.style.display = "none";
-                }
-            }
-        </script>
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle fa-fw"></i>
         </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a name="logout_submit" class="btn btn-primary" href="#" onclick="logout()">Logout</a>
-                    </div>
-                </div>
-            </div>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="./profile.html">Profile</a>
+          <a class="dropdown-item" href="./accountsettings.html">Settings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="compose.html">
+          <i class="fas fa-pencil-alt"></i>
+          <span>Compose</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="inbox.html">
+          <i class="fas fa-envelope"></i>
+          <span>Inbox</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="outbox.html">
+          <i class="fas fa-paper-plane"></i>
+          <span>Sent</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="veilbox.html">
+          <i class="fas fa-mask"></i>
+          <span>Veilbox</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="bin.html">
+          <i class="fas fa-trash-alt"></i>
+          <span>Bin</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-address-card"></i>
+          <span>Account</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="./profile.html">Profile</a>
+          <a class="dropdown-item" href="./accountsettings.html">Account Settings</a>
+          <a class="dropdown-item" href="../forgetpw.html">Forgot Password</a>
+        </div>
+      </li>
+    </ul>
+
+    <!--Dashboard end-->
+
+
+    <div class="container emp-profile">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              User Name
+            </h5>
+            <h6 id="user_email">
+              <!--email-->
+            </h6>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                  aria-controls="profile" aria-selected="false">Timeline</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-left:4%;">
+          <div class="profile-img">
+            <img src="img/user.png" alt="pro_pic">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Name</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="user_name">
+                    <!--first_name last_name-->
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="user_email_2">
+                    <!--email-->
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Phone</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="user_p_number">
+                    <!--p_number-->
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Address</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="user_address">
+                    <!--country-->
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Joind</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="creation_date"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sent email</label>
+                </div>
+                <div class="col-md-6">
+                  <p id="sent_mail_count">
+                    <!--sent_mail_count-->
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <button id="deleteAccount" class="deletebutton"><i style="margin-right:2px;"
+                      class="far fa-trash-alt"></i>Delete Account</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <div id="deletecustomModal" class="customModal">
+      <div class="customModal-content">
+        <div class="customModal-header">
+          <h2>Delete E-Veil Account</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="customModal-body">
+          <p>Are you sure you want to delete your account?</p>
+          <p><i class="fas fa-exclamation-triangle"></i> All of your data will be deleted permanently! </p>
+        </div>
+        <div class="customModal-footer">
+          <a class="deletebutton_a" style="text-decoration:none;" href="#" onclick="account_delete()">YES</a>
+          <a class="Noclose deletebutton_a" style="text-decoration:none;" href="#">NO</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      var customModal = document.getElementById("deletecustomModal");
+      var btn = document.getElementById("deleteAccount");
+      var span = document.getElementsByClassName("close")[0];
+      var no_close = document.getElementsByClassName("Noclose")[0];
 
-    <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+      btn.onclick = function () {
+        customModal.style.display = "block";
+      }
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+      span.onclick = function () {
+        customModal.style.display = "none";
+      }
+      no_close.onclick = function () {
+        customModal.style.display = "none";
+      }
 
-    <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
+      window.onclick = function (event) {
+        if (event.target == customModal) {
+          customModal.style.display = "none";
+        }
+      }
+    </script>
 
-    <script src="./userdb_js/logout.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-    <script src="./userdb_js/profile.js"></script><!-- Get value from DB -->
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a name="logout_submit" class="btn btn-primary" href="#" onclick="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+
+  <script src="./userdb_js/profile.js"></script><!-- Get value from DB -->
 
 </body>
 

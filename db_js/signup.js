@@ -33,10 +33,10 @@ submit.addEventListener('click', e => {
       if (password.length >= 6) {
 
         const aut = firebase.auth().createUserWithEmailAndPassword(email, password).then(cred => {
-          console.log("Success");
           document.getElementById('alreadyExistAlert').style.display = "none";
-          var newUserRef = userRef.push();
-          newUserRef.set({
+          var today=new Date();
+          var time = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear();
+          userRef.set({
             first_name: first_name,
             last_name: last_name,
             email: email,
@@ -46,7 +46,7 @@ submit.addEventListener('click', e => {
             country:"N/A",
             postal_code:"N/A",
             sent_email:0,
-            received_email:0
+            creation_date: time
           });
 
           document.getElementById('reg_form_id').reset();
@@ -70,8 +70,3 @@ submit.addEventListener('click', e => {
     document.getElementById('incompleteForm').style.display = "block";
   }
 })
-
-
-function saveMessage(first_name, last_name, email, phone_number, password) {
-
-}
