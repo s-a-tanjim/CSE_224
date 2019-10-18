@@ -2,115 +2,120 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login Your Account</title>
-	<link rel="icon" href="./img/icons/login.png" type="image/icon type">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Your Account</title>
+  <link rel="icon" href="./img/icons/login.png" type="image/icon type">
 
-	<!-- MATERIAL DESIGN ICONIC FONT -->
-	<link rel="stylesheet" href="./vendor/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+  <!-- MATERIAL DESIGN ICONIC FONT -->
+  <link rel="stylesheet" href="./vendor/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
-	<!-- STYLE CSS -->
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="./css/login.css">
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./css/login.css">
 
-	<style>
-		.custom-button-for-responsive {
-			/* For nav-bar button in responsive mood */
-			margin-top: 0px;
-			margin-right: 55px;
-		}
-		#wrongEmailAlert {
-			border: 1px solid #d6e9c6;
-			border-radius: 5px;
-			margin: 2px 40px;
-			margin-bottom: 10px;
-			text-align: center;
-			color: #3c763d;
-			background-color: #dff0d8;
-			display: none;
-		}
-	</style>
+  <style>
+    .custom-button-for-responsive {
+      /* For nav-bar button in responsive mood */
+      margin-top: 0px;
+      margin-right: 55px;
+    }
+
+    #wrongEmailAlert {
+      border: 1px solid #d6e9c6;
+      border-radius: 5px;
+      margin: 2px 40px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #3c763d;
+      background-color: #dff0d8;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-		<div class="container">
-			<a class="navbar-brand" href="index.html" style="letter-spacing:3px;"><i class="fas fa-user-secret"
-					style="margin-right:6px;"></i>E-Veil</a>
-			<button class="navbar-toggler custom-button-for-responsive" type="button" data-toggle="collapse"
-				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item ">
-						<a class="nav-link" href="login.html" style="letter-spacing:1px;">Login
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="signup.html" style="letter-spacing:1px;">Sign Up</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.html" style="letter-spacing:1px;">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html" style="letter-spacing:1px;">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Navbar end-->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" style="letter-spacing:3px;"><i class="fas fa-user-secret"
+          style="margin-right:6px;"></i>E-Veil</a>
+      <button class="navbar-toggler custom-button-for-responsive" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="login.html" style="letter-spacing:1px;">Login
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html" style="letter-spacing:1px;">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" style="letter-spacing:1px;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" style="letter-spacing:1px;">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end-->
 
 
-	<div class="wrapper" style="background-image: url('./img/signin-bg-3.jpg');">
-		<div class="inner" style="border-radius: 10px;">
+  <div class="wrapper" style="background-image: url('./img/signin-bg-3.jpg');">
+    <div class="inner" style="border-radius: 10px;">
 
-			<form id="login_form_id" action="#">
-				<h3>Login Form</h3>
-				<div class="form-wrapper">
-					<input type="email" placeholder="Email" class="form-control" id="email_id" required>
-					<i class="zmdi zmdi-email"></i>
-				</div>
-				<div class="form-wrapper">
-					<input type="password" placeholder="Password" class="form-control" id="password_id" required>
-					<i class="zmdi zmdi-lock"></i>
-				</div>
-				<div class="form-wrapper" id="wrongEmailAlert">
-					Wrong Email or Password!
-				</div>
-				<div class="form-wrapper">
-					<a href="forgetpw.html" style="text-decoration: none;color: #111;">forget password?</a>
-					<div style="float: right;"><a href="signup.html" style="text-decoration: none;color: #111;">Create new
-							account</a></div>
-				</div>
-				<button type="submit" name="login_submit" id="login_button">Login
-					<i class="zmdi zmdi-arrow-right"></i>
-				</button>
-			</form>
+      <form id="login_form_id" action="#">
+        <h3>Login Form</h3>
+        <div class="form-wrapper">
+          <input type="email" placeholder="Email" class="form-control" id="email_id" required>
+          <i class="zmdi zmdi-email"></i>
+        </div>
+        <div class="form-wrapper">
+          <input type="password" placeholder="Password" class="form-control" id="password_id" required>
+          <i class="zmdi zmdi-lock"></i>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+          <input type="checkbox" class="custom-control-input" name="rememberMe" id="rememberMe">
+          <label class="custom-control-label" for="rememberMe">Remember password</label>
+        </div>
+        <div class="form-wrapper" id="wrongEmailAlert">
+          Wrong Email or Password!
+        </div>
+        <div class="form-wrapper">
+          <a href="forgetpw.html" style="text-decoration: none;color: #111;">forget password?</a>
+          <div style="float: right;"><a href="signup.html" style="text-decoration: none;color: #111;">Create new
+              account</a></div>
+        </div>
+        <button type="submit" name="login_submit" id="login_button">Login
+          <i class="zmdi zmdi-arrow-right"></i>
+        </button>
+      </form>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
-	<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-		<div class="container text-center">
-			<small style="letter-spacing:1px;">Copyright &copy; E-Veil</small>
-		</div>
-	</footer>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small style="letter-spacing:1px;">Copyright &copy; E-Veil</small>
+    </div>
+  </footer>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
-	<script src="js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap.min.js"></script>
 
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="db_js/config.js"></script>
   <script src="db_js/login.js"></script>
