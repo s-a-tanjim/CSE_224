@@ -15,8 +15,6 @@ location.search
     else if (tmp[0] === "prev") prev_page = decodeURIComponent(tmp[1]);
   });
 
-console.log(key);
-console.log(prev_page);
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
 var ref = "emails/" + uid + "/" + prev_page + "/" + key;

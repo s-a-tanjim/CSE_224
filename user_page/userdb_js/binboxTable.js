@@ -6,42 +6,66 @@ var notSeenEmailCount = 0;
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
 
-var refRec="emails/" + uid+"/received";
-var refSent="emails/" + uid+"/sent";
-var refVail="emails/" + uid+"/veilbox";
+messageLoader();
+
+var refRec = "emails/" + uid + "/received";
+var refSent = "emails/" + uid + "/sent";
+var refVail = "emails/" + uid + "/veilbox";
 var ReceivedRef = firebase.database().ref(refRec);
 var SentRef = firebase.database().ref(refSent);
 var VailRef = firebase.database().ref(refVail);
 
-ReceivedRef.on('value', data=>{
+ReceivedRef.on('value', data => {
   alldata = data.val();
-  keys = Object.keys(alldata);
-  totalEmail = keys.length;
-  createTable("received");
+  if (nullChecker(alldata)) {
+    //pas// No table will be created
+  } else {
+    keys = Object.keys(alldata);
+    keys.reverse();
+    totalEmail = keys.length;
+    createTable("received");
+  }
 }, errData);
-SentRef.on('value', data=>{
+SentRef.on('value', data => {
   alldata = data.val();
-  keys = Object.keys(alldata);
-  totalEmail = keys.length;
-  createTable("sent");
+  if (nullChecker(alldata)) {
+    //pas// No table will be created
+  } else {
+    keys = Object.keys(alldata);
+    keys.reverse();
+    totalEmail = keys.length;
+    createTable("sent");
+  }
 }, errData);
-VailRef.on('value', data=>{
+VailRef.on('value', data => {
   alldata = data.val();
-  keys = Object.keys(alldata);
-  totalEmail = keys.length;
-  createTable("veilbox");
+  if (nullChecker(alldata)) {
+    if(totalMailCount==0){
+      var row = table.insertRow();
+      var cell = row.insertCell();
+      cell.setAttribute('colspan', 4);
+      cell.setAttribute('style', 'text-align:center;')
+      cell.innerHTML = "No Data Available";
+    }
+  } else {
+    keys = Object.keys(alldata);
+    keys.reverse();
+    totalEmail = keys.length;
+    createTable("veilbox");
+  }
+  document.getElementById('messageLoader').style.display='none';
 }, errData);
 
 var table = document.getElementById('binTable');
 var alldata, keys;
 
 function createTable(from) {
-  for (var i = 0; i <totalEmail; i++) {
+  for (var i = 0; i < totalEmail; i++) {
 
     var index = keys[i];
     if (alldata[index].bin == '1') {
       var row = table.insertRow();
-      var attrib = "document.location.href='message.html?key=" + index + "&prev="+from+"'";
+      var attrib = "document.location.href='message.html?key=" + index + "&prev=" + from + "'";
       //document.location.href="../index.html?invalid_action_from_inbox"
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
@@ -51,13 +75,13 @@ function createTable(from) {
       cell2.innerHTML = alldata[index].subject;
       cell3.innerHTML = alldata[index].date;
 
-      var parameter=from+"/"+index;
+      var parameter = from + "/" + index;
       cell4.innerHTML = '<a onClick="undoDelete(\'' + parameter + '\')">' +
-      '<i class="fas fa-undo"></i></a><a onClick="deleteEmail(\'' + parameter + '\')">' +
-      '<i class="far fa-trash-alt"></i></a>';
+        '<i class="fas fa-undo"></i></a><a onClick="deleteEmail(\'' + parameter + '\')">' +
+        '<i class="far fa-trash-alt"></i></a>';
       cell4.style.display = 'flex';
       cell4.style.justifyContent = 'space-around';
-    
+
       cell1.setAttribute('onClick', attrib);
       cell2.setAttribute('onClick', attrib);
       cell3.setAttribute('onClick', attrib);
@@ -81,17 +105,18 @@ function createTable(from) {
 function deleteEmail(parameter) {
   var email = sessionStorage.getItem('email');
   var uid = email.substring(0, email.length - 10);
-  var ref = "emails/" + uid + "/"+parameter;
+  var ref = "emails/" + uid + "/" + parameter;
   var userRef = firebase.database().ref(ref);
 
   userRef.remove().then(e => {
     location.reload();
   });
 }
+
 function undoDelete(parameter) {
   var email = sessionStorage.getItem('email');
   var uid = email.substring(0, email.length - 10);
-  var ref = "emails/" + uid + "/"+parameter;
+  var ref = "emails/" + uid + "/" + parameter;
   var userRef = firebase.database().ref(ref);
   userRef.update({
     'bin': "0"
@@ -114,4 +139,15 @@ function mouseLeaveEffect(x) {
 function errData(err) {
   console.log("Error!! id: ");
   console.log(err);
+}
+
+function nullChecker(alldata) {
+  if (alldata === null || alldata === undefined) {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById('present_time').innerHTML = "Updated today at " + time;
+    return true;
+  } else {
+    return false;
+  }
 }

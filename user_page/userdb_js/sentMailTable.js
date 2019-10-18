@@ -3,9 +3,13 @@ var totalMailCount = 0;
 var seenEmailCount = 0;
 var notSeenEmailCount = 0;
 
+var table = document.getElementById('sentTable');
+var alldata, keys;
+messageLoader();
+
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
-var ref = "emails/" + uid+"/sent";
+var ref = "emails/" + uid + "/sent";
 var emailsRef = firebase.database().ref(ref);
 
 emailsRef.on('value', retrieveTable, errData);
@@ -15,24 +19,33 @@ function errData(err) {
   console.log(err);
 }
 
-var table = document.getElementById('sentTable');
-var alldata, keys;
-
 function retrieveTable(data) {
   alldata = data.val();
-  keys = Object.keys(alldata);
-  totalEmail = keys.length;
-  createTable();
+  if (alldata === null || alldata === undefined) {
+    var row = table.insertRow();
+    var cell = row.insertCell();
+    cell.setAttribute('colspan', 4);
+    cell.setAttribute('style', 'text-align:center;')
+    cell.innerHTML = "No Data Available";
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById('present_time').innerHTML = "Updated today at " + time;
+  } else {
+    keys = Object.keys(alldata);
+    keys.reverse();
+    totalEmail = keys.length;
+    createTable();
+  }
+  document.getElementById('messageLoader').style.display='none';
 }
 
 function createTable() {
-  for (var i = 0; i < 15 && totalEmail > totalMailCount; i++) {
+  for (var i = 0; i < 15 && totalEmail > totalMailCount;) {
 
     var index = keys[totalMailCount];
     if (alldata[index].bin == '0') {
       var row = table.insertRow();
       var attrib = "document.location.href='message.html?key=" + index + "&prev=sent'";
-      //document.location.href="../index.html?invalid_action_from_inbox"
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
@@ -51,11 +64,12 @@ function createTable() {
       } else {
         seenEmailCount++;
       }
+      i++;
     }
     totalMailCount++;
   }
 
-  document.getElementById('totalMailCount').innerHTML = " (Showing " + totalMailCount + " emails)";
+  document.getElementById('totalMailCount').innerHTML = " (Showing " + (seenEmailCount+notSeenEmailCount) + " emails)";
   var today = new Date();
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   document.getElementById('present_time').innerHTML = "Updated today at " + time;
@@ -86,12 +100,7 @@ function mouseLeaveEffect(x) {
 }
 
 window.onscroll = function (ev) {
-  //console.log("winHeight: " + window.innerHeight);
-  //console.log("WinScrollTop: " + window.scrollY);
-  //console.log("DocHeight: " + document.body.offsetHeight);
   if ((window.innerHeight + window.scrollY + 5) >= document.body.offsetHeight) {
-    // We're at the bottom of the page
-    //console.log('end');
     createTable();
   }
 };
