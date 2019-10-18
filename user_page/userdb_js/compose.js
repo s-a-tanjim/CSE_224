@@ -7,7 +7,7 @@ const form_anonymous_send_button = document.getElementById('send_anonymous_id');
 
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
-var ref = "emails/" + uid
+var ref = "emails/" + uid+"/sent";
 var from_userRef = firebase.database().ref(ref);
 
 
@@ -20,7 +20,7 @@ form_send_button.addEventListener('click', e => {
   var message = form_message.value;
 
   var to_uid = to_email.substring(0, to_email.length - 10);
-  ref = "emails/" + to_uid;
+  ref = "emails/" + to_uid+"/received";
   var to_userRef = firebase.database().ref(ref);
 
   var today = new Date();
@@ -39,7 +39,7 @@ form_send_button.addEventListener('click', e => {
         'subject': subject,
         'message': message,
         'bin': "0",
-        'mode': "sent",
+        'seen': "0",
         'time': time,
         'date': date
       });
@@ -51,7 +51,7 @@ form_send_button.addEventListener('click', e => {
         'subject': subject,
         'message': message,
         'bin': "0",
-        'mode': "received",
+        'seen': "0",
         'time': time,
         'date': date
       });
@@ -64,7 +64,6 @@ form_send_button.addEventListener('click', e => {
       from_userRef_count.update({
         'sent_email': send_count
       });
-
       document.getElementById("user_form_id").reset();
       document.getElementById('successMessage').style.display = 'block';
 
@@ -86,7 +85,7 @@ form_anonymous_send_button.addEventListener('click', e => {
 
 
   var to_uid = to_email.substring(0, to_email.length - 10);
-  ref = "emails/" + to_uid;
+  ref = "emails/" + to_uid+"/veilbox";
   var to_userRef = firebase.database().ref(ref);
 
   var today = new Date();
@@ -99,13 +98,14 @@ form_anonymous_send_button.addEventListener('click', e => {
     if (to_email.substr(to_email.length - 10) == "@eveil.com") {
       document.getElementById('incorrectEmail').style.display = 'none';
       //Sender db update
+      for(var i=0;i<100;i++){
       var newEmailRef = from_userRef.push();
       newEmailRef.set({
         'from': to_email,
         'subject': subject,
         'message': message,
         'bin': "0",
-        'mode': "sent",
+        'seen': "0",
         'time': time,
         'date': date
       });
@@ -117,7 +117,7 @@ form_anonymous_send_button.addEventListener('click', e => {
         'subject': subject,
         'message': message,
         'bin': "0",
-        'mode': "veilbox",
+        'seen': "0",
         'time': time,
         'date': date
       });
@@ -130,7 +130,7 @@ form_anonymous_send_button.addEventListener('click', e => {
       from_userRef_count.update({
         'sent_email': send_count
       });
-
+    }
       document.getElementById("user_form_id").reset();
       document.getElementById('successMessage').style.display = 'block';
 
