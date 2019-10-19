@@ -6,6 +6,9 @@ checkCookie();  //check if cookie is set or not
 
 submit.addEventListener('click', e => {
   e.preventDefault();
+  document.getElementById('wholePage').style.display='none';
+  document.getElementById('page-loader').style.display='block';
+  document.getElementsByTagName('body')[0].style='background: #6997DB;';
   const email = mail.value;
   const password = pw.value;
   firebase.auth().signInWithEmailAndPassword(email, password).then(cred => {
@@ -20,9 +23,11 @@ submit.addEventListener('click', e => {
 
     document.getElementById('wrongEmailAlert').style.display = "none";
     sessionStorage.setItem('email', email);
-    //console.log("Logged In");
+    document.getElementById('page-loader').style.display='none';
     document.location.href = "user_page/inbox.html?Login=Successful";
   }).catch(e => {
+    document.getElementById('page-loader').style.display='none';
+    document.getElementById('wholePage').style.display='block';
     document.getElementById('wrongEmailAlert').style.display = "block";
     console.log("Error!  id: " + e.message);
   });

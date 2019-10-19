@@ -89,16 +89,6 @@ function deleteEmail(key) {
   });
 }
 
-var tableData = document.getElementsByClassName('tableData');
-
-function onMouseEffect(x) {
-  //x.style="background-color:rgba(0,0,0,0.2);";
-}
-
-function mouseLeaveEffect(x) {
-  //x.style="background-color:white";
-}
-
 window.onscroll = function (ev) {
   if ((window.innerHeight + window.scrollY + 5) >= document.body.offsetHeight) {
     createTable();

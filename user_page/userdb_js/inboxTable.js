@@ -76,8 +76,7 @@ function createTable() {
     if (alldata[index].bin == '0') {
       var row = table.insertRow();
       var attrib = "document.location.href='message.html?key=" + index + "&prev=received'";
-      //document.location.href="../index.html?invalid_action_from_inbox"
-      var cell1 = row.insertCell(0);
+     var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);

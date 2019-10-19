@@ -3,10 +3,12 @@ var totalMailCount = 0;
 var seenEmailCount = 0;
 var notSeenEmailCount = 0;
 
+var table = document.getElementById('binTable');
+var alldata, keys;
+messageLoader();
+
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
-
-messageLoader();
 
 var refRec = "emails/" + uid + "/received";
 var refSent = "emails/" + uid + "/sent";
@@ -56,9 +58,6 @@ VailRef.on('value', data => {
   document.getElementById('messageLoader').style.display='none';
 }, errData);
 
-var table = document.getElementById('binTable');
-var alldata, keys;
-
 function createTable(from) {
   for (var i = 0; i < totalEmail; i++) {
 
@@ -66,7 +65,6 @@ function createTable(from) {
     if (alldata[index].bin == '1') {
       var row = table.insertRow();
       var attrib = "document.location.href='message.html?key=" + index + "&prev=" + from + "'";
-      //document.location.href="../index.html?invalid_action_from_inbox"
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
@@ -123,18 +121,7 @@ function undoDelete(parameter) {
   }).then(e => {
     location.reload();
   });
-}
-
-var tableData = document.getElementsByClassName('tableData');
-
-function onMouseEffect(x) {
-  //x.style="background-color:rgba(0,0,0,0.2);";
-}
-
-function mouseLeaveEffect(x) {
-  //x.style="background-color:white";
-}
-
+}s
 
 function errData(err) {
   console.log("Error!! id: ");

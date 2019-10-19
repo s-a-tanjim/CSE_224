@@ -46,7 +46,6 @@ function createTable() {
     if (alldata[index].bin == '0') {
       var row = table.insertRow();
       var attrib = "document.location.href='message.html?key=" + index + "&prev=veilbox'";
-      //document.location.href="../index.html?invalid_action_from_inbox"
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
@@ -88,16 +87,6 @@ function deleteEmail(key) {
   }).then(e => {
     location.reload();
   });
-}
-
-var tableData = document.getElementsByClassName('tableData');
-
-function onMouseEffect(x) {
-  //x.style="background-color:rgba(0,0,0,0.2);";
-}
-
-function mouseLeaveEffect(x) {
-  //x.style="background-color:white";
 }
 
 window.onscroll = function (ev) {
