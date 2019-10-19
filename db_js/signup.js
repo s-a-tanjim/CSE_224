@@ -29,15 +29,15 @@ submit.addEventListener('click', e => {
       document.getElementById('passwordMatch').style.display = "none";
 
       if (password.length >= 6) {
-        document.getElementById('wholePage').style.display='none';
-        document.getElementById('page-loader').style.display='block';
-        document.getElementsByTagName('body')[0].style='background: #6997DB;';
-        
+        document.getElementById('wholePage').style.display = 'none';
+        document.getElementById('page-loader').style.display = 'block';
+        document.getElementsByTagName('body')[0].style = 'background: #6997DB;';
+
         const aut = firebase.auth().createUserWithEmailAndPassword(email, password).then(cred => {
           var userRef = firebase.database().ref(ref);
           document.getElementById('alreadyExistAlert').style.display = "none";
-          var today=new Date();
-          var time = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear();
+          var today = new Date();
+          var time = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
           userRef.set({
             first_name: first_name,
             last_name: last_name,
@@ -45,22 +45,20 @@ submit.addEventListener('click', e => {
             phone_number: phone_number,
             password: password,
             city: "N/A",
-            country:"N/A",
-            postal_code:"N/A",
-            sent_email:0,
+            country: "N/A",
+            postal_code: "N/A",
+            sent_email: 0,
             creation_date: time
+          }).then(x => {
+            document.getElementById('reg_form_id').reset();
+            firebase.auth().signOut().then(x => {
+              document.getElementById('page-loader').style.display = 'none';
+              document.location.href = "./login.html?Signup=Successful";
+            });
           });
-
-          document.getElementById('reg_form_id').reset();
-
-          firebase.auth().signOut().then(x=>{
-            document.getElementById('page-loader').style.display='none';
-            document.location.href = "./login.html?Signup=Successful";
-          });
-
         }).catch(e => {
-          document.getElementById('page-loader').style.display='none';
-          document.getElementById('wholePage').style.display='block';
+          document.getElementById('page-loader').style.display = 'none';
+          document.getElementById('wholePage').style.display = 'block';
           console.log("Connection Error!  id:" + e.message);
           document.getElementById('alreadyExistAlert').style.display = "block";
         });

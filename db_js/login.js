@@ -20,11 +20,11 @@ submit.addEventListener('click', e => {
     } else {
       //console.log('not Set Cookie');
     }
-
     document.getElementById('wrongEmailAlert').style.display = "none";
     sessionStorage.setItem('email', email);
     document.getElementById('page-loader').style.display='none';
     document.location.href = "user_page/inbox.html?Login=Successful";
+  
   }).catch(e => {
     document.getElementById('page-loader').style.display='none';
     document.getElementById('wholePage').style.display='block';
@@ -39,7 +39,7 @@ function setCookie(cookieName, cvalue) {
   exdays = 10; //10days
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
-  document.cookie = cookieName + "=" + cvalue + ";" + expires + ";path=/;secure";
+  document.cookie = cookieName + "=" + cvalue + ";" + expires + ";path=/;SameSite=Strict;";
 }
 
 function checkCookie() {

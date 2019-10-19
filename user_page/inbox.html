@@ -27,7 +27,6 @@
   <link href="css/messageloader.css" rel="stylesheet">
 </head>
 
-
 <body id="page-top">
 
   <div id="page-loader">
@@ -41,7 +40,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script src="./userdb_js/session_check.js"></script>
     <script src="./userdb_js/config.js"></script>
-    <script src="./userdb_js/inbox.js"></script><!-- To create session -->
+    <script src="./userdb_js/sessionCreate.js"></script><!-- To create session -->
     <script src="./userdb_js/logout.js"></script>
     <script src="./userdb_js/messageLoader.js"></script>
 
@@ -160,7 +159,6 @@
         </div>
       </div>
 
-
       <!-- Scroll to Top Button-->
       <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -196,14 +194,7 @@
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
 
-
   <script src="./userdb_js/inboxTable.js"></script><!-- To create session -->
-  <script>
-    document.getElementById('page-top').setAttribute('style', 'background-color: white;');
-    document.getElementById('page-loader').style.display = 'none';
-    document.getElementById('wholePage').style.display = 'block';
-  </script>
 
 </body>
-
 </html>

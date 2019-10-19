@@ -121,7 +121,7 @@ function undoDelete(parameter) {
   }).then(e => {
     location.reload();
   });
-}s
+}
 
 function errData(err) {
   console.log("Error!! id: ");

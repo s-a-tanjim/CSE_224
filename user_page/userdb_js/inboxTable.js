@@ -5,68 +5,33 @@ var notSeenEmailCount = 0;
 
 var table = document.getElementById('inboxTable');
 var alldata, keys;
-
 messageLoader();
 
 var email = sessionStorage.getItem('email');
 var uid = email.substring(0, email.length - 10);
-var refUser = "user/" + uid;
-var userRef = firebase.database().ref(refUser);
 
-userRef.on('value', retrieveData, errData);
+var refEmail = "emails/" + uid + "/received";
+var emailsRef = firebase.database().ref(refEmail);
+emailsRef.on('value', data => {
+  alldata = data.val();
+  if (alldata === null || alldata === undefined) {
+    var row = table.insertRow();
+    var cell = row.insertCell();
+    cell.setAttribute('colspan', 4);
+    cell.setAttribute('style', 'text-align:center;')
+    cell.innerHTML = "No Data Available";
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.getElementById('present_time').innerHTML = "Updated today at " + time;
+  } else {
+    keys = Object.keys(alldata);
+    keys.reverse();
+    totalEmail = keys.length;
+    createTable();
+  }
+  document.getElementById('messageLoader').style.display = 'none';
+}, errEmailsData);
 
-function retrieveData(data) { //For session only
-
-  var alldata = data.val();
-  //var keys = Object.keys(alldata);
-  //var k = keys[0];
-
-  const first_name = alldata.first_name;
-  const last_name = alldata.last_name;
-  const phone_number = alldata.phone_number;
-  const city = alldata.city;
-  const country = alldata.country;
-  const postal_code = alldata.postal_code;
-  const sent_email = alldata.sent_email;
-
-  sessionStorage.setItem('first_name', first_name);
-  sessionStorage.setItem('last_name', last_name);
-  sessionStorage.setItem('phone_number', phone_number);
-  sessionStorage.setItem('city', city);
-  sessionStorage.setItem('country', country);
-  sessionStorage.setItem('postal_code', postal_code);
-  sessionStorage.setItem('sent_email', sent_email);
-  retrieveTable(); //to create table
-}
-
-function errData(err) {
-  console.log("Error!! id: ");
-  console.log(err);
-}
-
-function retrieveTable() {
-  var refEmail = "emails/" + uid + "/received";
-  var emailsRef = firebase.database().ref(refEmail);
-  emailsRef.on('value', data => {
-    alldata = data.val();
-    if (alldata === null || alldata === undefined) {
-      var row = table.insertRow();
-      var cell = row.insertCell();
-      cell.setAttribute('colspan', 4);
-      cell.setAttribute('style', 'text-align:center;')
-      cell.innerHTML = "No Data Available";
-      var today = new Date();
-      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      document.getElementById('present_time').innerHTML = "Updated today at " + time;
-    } else {
-      keys = Object.keys(alldata);
-      keys.reverse();
-      totalEmail = keys.length;
-      createTable();
-    }
-    document.getElementById('messageLoader').style.display='none';
-  }, errEmailsData);
-}
 
 function createTable() {
 
@@ -76,7 +41,7 @@ function createTable() {
     if (alldata[index].bin == '0') {
       var row = table.insertRow();
       var attrib = "document.location.href='message.html?key=" + index + "&prev=received'";
-     var cell1 = row.insertCell(0);
+      var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
@@ -98,7 +63,6 @@ function createTable() {
     }
     totalMailCount++;
   }
-
 
   document.getElementById('totalMailCount').innerHTML = " (Showing " + (seenEmailCount + notSeenEmailCount) + " emails)";
   var today = new Date();
